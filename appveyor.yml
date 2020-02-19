@@ -1,0 +1,12 @@
+build: false
+
+environment:
+  PYTHON_HOME: "C:\\Python37"
+
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+
+install:
+  - set PATH=%PYTHON_HOME%;%PYTHON_HOME%/Scripts/;%PATH%
+  - pip.exe install --upgrade conan_package_tools==0.31.1 bincrafters_package_tools==0.22.0 conan==1.22.2 # conan is last to avoid version conflict in dependencies
+  - pip.exe freeze
