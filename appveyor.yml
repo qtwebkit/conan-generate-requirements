@@ -8,7 +8,7 @@ environment:
 
 install:
   - set PATH=%PYTHON_HOME%;%PYTHON_HOME%/Scripts/;%PATH%
-  - set PACKAGES=conan_package_tools==0.31.1 bincrafters_package_tools==0.22.0 conan==1.22.2 # conan is last to avoid version conflict in dependencies
+  - set PACKAGES=conan==1.22.2 # conan is last to avoid version conflict in dependencies
   - pip.exe install --upgrade %PACKAGES%
   - echo ^# Generated for %PACKAGES% > conan_requirements.txt
   - pip.exe freeze >> conan_requirements.txt
